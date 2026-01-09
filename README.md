@@ -53,8 +53,7 @@ To run this project locally:
 
 1.  **Clone the repository**
     ```bash
-    git clone [https://github.com/yourusername/niftystream-de.git](https://github.com/yourusername/niftystream-de.git)
-    cd niftystream-de
+  git clone https://github.com/AbhilashBagde/NiftyStream-DE.git
     ```
 
 2.  **Install Dependencies**
