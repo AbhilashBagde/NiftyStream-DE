@@ -55,3 +55,15 @@ To run this project, you need two terminal windows (one for the backend, one for
 ```bash
 git clone [https://github.com/AbhilashBagde/NiftyStream-DE.git](https://github.com/AbhilashBagde/NiftyStream-DE.git)
 cd NiftyStream-DE
+
+cd backend
+pip install -r requirements.txt
+python server.py
+# Use 'uvicorn server:app --reload' if using a distinct ASGI runner
+# Server will start at: [http://127.0.0.1:8000](http://127.0.0.1:8000)
+
+
+cd frontend
+npm install
+npm start
+# Dashboard will open at: http://localhost:3000
