@@ -1,8 +1,4 @@
--e 
-# Environment files
-*.env
-*.env.*
--e 
-# Environment files
-*.env
-*.env.*
+node_modules/
+.DS_Store
+.env
+__pycache__/

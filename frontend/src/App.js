@@ -27,7 +27,12 @@ import {
 } from 'lucide-react';
 import './App.css';
 
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL || 'http://localhost:8001';
+// UPDATE: Dynamic URL handling for Vercel Deployment
+// If we are in production (Vercel), use relative path (empty string).
+// If we are local, use the full localhost URL.
+const BACKEND_URL = process.env.NODE_ENV === 'production' 
+  ? '' 
+  : (process.env.REACT_APP_BACKEND_URL || 'http://localhost:8001');
 
 // Stock Sidebar Component
 const StockSidebar = ({ stocks, selectedStock, onSelectStock, loading }) => {
@@ -295,6 +300,7 @@ function App() {
   // Fetch stock list
   const fetchStocks = useCallback(async () => {
     try {
+      // NOTE: Relative path /api/stocks is handled by Vercel proxy in production
       const response = await axios.get(`${BACKEND_URL}/api/stocks`);
       setStocks(response.data);
     } catch (err) {
